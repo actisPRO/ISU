@@ -11,12 +11,13 @@ _main:
     push ebp
     mov ebp, esp
     
-    call ReadUInt16_Silent
+    ;xor eax, eax
+    call ReadUInt16
     cmp ax, 1
-    jle _no ; 0 or 1
+    je _no 
     
-    ;xor ebx, ebx   
-    ;xor ecx, ecx
+    xor ebx, ebx   
+    xor ecx, ecx
     
     mov cx, ax ; input value, as ax is changed after division
     mov bx, 2
